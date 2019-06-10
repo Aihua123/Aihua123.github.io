@@ -1,265 +1,294 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <title>Bootstrap Example</title>
+    <title>Title</title>
+    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <style>
-        /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-        .row.content {
-            height: 550px
-        }
-
-        /* .row {
-            margin-bottom: 15px;
-            margin-top: 15px
-        } */
-
-        .card {
-            margin-bottom: 15px;
-            margin-top: 15px
-        }
-
-        /* Set gray background color and 100% height */
-        .sidenav {
-            background-color: #f1f1f1;
-            height: 100%;
-        }
-
-        /* On small screens, set height to 'auto' for the grid */
-        @media screen and (max-width: 767px) {
-            .row.content {
-                height: auto;
-            }
-        }
-    </style>
 </head>
+
+<style>
+    #top_header {
+        font: 3em Helvetica;
+        font-weight: 700;
+    }
+
+    #overview {
+        font: 1.2em Helvetica;
+    }
+
+    .display-4 {
+        text-align: center;
+        font-weight: 450;
+
+    }
+
+    .card {
+        margin-bottom: 15px;
+        margin-top: 15px;
+    }
+
+
+    #footer {
+        bottom: 0;
+        width: 100%;
+        position: bottom;
+        height: 100px;
+        background-color: #f5f5f5;
+    }
+
+    .footer-block {
+        margin-top: 20px 0;
+    }
+</style>
 
 <body>
 
-    <nav class="navbar navbar-inverse visible-xs">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="#">Logo</a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Dashboard</a></li>
-                    <li><a href="#">Age</a></li>
-                    <li><a href="#">Gender</a></li>
-                    <li><a href="#">Geo</a></li>
-                </ul>
+    <div class="container">
+
+        <!-- Jumbotron -->
+        <div class="card card-image" style="background-image: url(background.jpg);">
+            <div class="text-white text-center rgba-stylish-strong py-5 px-4">
+                <div class="py-5">
+                    <!-- Content -->
+                    <h2 class="card-title h1 my-4 py-2" id=top_header>2018 LA Parking Ticket Analysis</h2>
+                    <!-- <p class="h5 mb-4 pb-2 px-md-5 mx-md-5 " id='overview'>The dashboard helps user to understand where
+                        the most
+                        tickets are being issued, what are the most frequent violations, where parking fines go, and
+                        peak
+                        violation times and months. The dataset used for this analysis is hosted by the city of Los
+                        Angeles.</p> -->
+                </div>
             </div>
         </div>
-    </nav>
 
-    <div class="container-fluid">
-        <div class="row content">
-            <div class="col-sm-3 sidenav hidden-xs">
-                <h2>Logo</h2>
-                <ul class="nav nav-pills nav-stacked">
-                    <li class="active"><a href="#section1">Dashboard</a></li>
-                    <li><a href="#section2">Age</a></li>
-                    <li><a href="#section3">Gender</a></li>
-                    <li><a href="#section3">Geo</a></li>
-                </ul><br>
+        <div class="card">
+            <!-- <div class="card-header">
+                    Analysis
+                </div> -->
+            <div class="card-body">
+                <h5 class="card-title">Project Overview</h5>
+                <h7 class="card-title">The dashboard helps user to understand where
+                    the most tickets are being issued, what are the most frequent violations, where parking fines go,
+                    and peak violation times and months. The dataset used for this analysis is hosted by the city of Los
+                </h7>
+                <p class="card-text"></p>
+                <h5 class="card-title">Project Approach</h5>
+                <h7 class="card-title">Used Pandas in a Jupyter Notebook to create and cleanup data. Converted the data
+                    into year and split the data per year. Created the right date format and time format using
+                    Python/Pandas. Once dates were cleaned up and formatted, a separate CSV file for 2018 and previous
+                    years were created. In the original dataset, coordinates were provided in ESPG California state
+                    plane format and had to be converted to decimal degree Latitude and Longitude for plotting. Then the
+                    tables were merged in to one master table. Used Google API to get the maps and create heat maps.
+                </h7>
+                <br>
+                <br>
+                <a href="#" class="btn btn-primary">Go to Github for code</a>
             </div>
-            <br>
+        </div>
 
-            <div class="col-sm-9">
-                <div class="well">
-                    <h4>Dashboard</h4>
-                    <p>Some text..</p>
+        <!-- summary info -->
+        <div class="card-deck">
+            <div class="card border-secondary mb-3">
+                <div class="card-header">Summary Info</div>
+                <div class="card-body">
+                    <h5 class="card-title">Total Issued Parking Tickets</h5>
+                    <p class="card-text">1,997,938</p>
                 </div>
-                <div class="row">
-                    <div class="col-sm-3">
-                        <div class="well">
-                            <h4>Total Issued Parking Tickets</h4>
-                            <p>1,997,938</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="well">
-                            <h4>Total Fine Amount</h4>
-                            <p>$140,372,757</p>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="well">
-                            <h4>Average Fine Amount</h4>
-                            <p>$70.32</p>
-                        </div>
-                    </div>
+            </div>
+            <div class="card border-secondary mb-3">
+                <div class="card-header">Summary Info</div>
+                <div class="card-body">
+                    <h5 class="card-title">Total Fine Amount</h5>
+                    <p class="card-text">$140,372,757</p>
                 </div>
-
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-header">
-                                Total Number of Tickets by Month
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title"></h5>
-                                <img class="card-img-top" src="visualization.svg" alt="Card image cap">
-                                <p class="card-text"></p>
-                                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-header">
-                                Total Fine Amount of Tickets by Month
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title"></h5>
-                                <img class="card-img-top" src="visualization_1.svg" alt="Card image cap">
-                                <p class="card-text"></p>
-                                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                            </div>
-                        </div>
-                    </div>
-
+            </div>
+            <div class="card border-secondary mb-3">
+                <div class="card-header">Summary Info</div>
+                <div class="card-body">
+                    <h5 class="card-title">Average Fine Amount</h5>
+                    <p class="card-text">$70.32</p>
                 </div>
+            </div>
+        </div>
 
+
+        <!-- first chart -->
+        <div class="row">
+            <div class="col-sm-6">
                 <div class="card">
                     <div class="card-header">
-                        Analysis & Code
+                        Total Number of Tickets by Month
                     </div>
                     <div class="card-body">
                         <h5 class="card-title"></h5>
-                        <p class="card-text">In 2018,the month of March had the highest amount issued with over
-                            $13,543,000 issued and September was the lowest with $9.9 million issued. There was a
-                            noticeable trend downward as the year went on, with the lower amount volumes coming at the
-                            end of the year.</p>
-                        <img class="card-img-bottom" src="Code 1.PNG" alt="Card image cap">
+                        <img class="card-img-top" src="visualization.svg" alt="Card image cap" width="300" height="400">
+                        <p class="card-text"></p>
                         <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                     </div>
                 </div>
-
-
-                <div class="row">
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-header">
-                                Total Number of Tickets by Hour of Day
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title"></h5>
-                                <img class="card-img-top" src="visualization_2.svg" alt="Card image cap">
-                                <p class="card-text"></p>
-                                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6">
-                        <div class="card">
-                            <div class="card-header">
-                                Top 5 Violations by Each Hour
-                            </div>
-                            <div class="card-body">
-                                <h5 class="card-title"></h5>
-                                <img class="card-img-top" src="visualization_3.svg" alt="Card image cap">
-                                <p class="card-text"></p>
-                                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+            </div>
+            <div class="col-sm-6">
                 <div class="card">
                     <div class="card-header">
-                        Analysis & Code
+                        Total Fine Amount of Tickets by Month
                     </div>
                     <div class="card-body">
                         <h5 class="card-title"></h5>
-                        <p class="card-text">The first graph shows a drastic jump in issued tickets starting at 8am and
-                            lasting throughout noon, wherafter the number of citations start to decrease. Most of the
-                            citations were issued at 8am, 10am, and noon. The top 5 violations for each hour were also
-                            shown in the second graph, which allows us to find some correlations between violation types
-                            and hours, for instance, "NO PARK/STREET CLEAN" violation happened most frequently around
-                            8am to 1pm.</p>
-                        <img class="card-img-bottom" src="Code 2.PNG" alt="Card image cap">
+                        <img class="card-img-top" src="visualization_1.svg" alt="Card image cap">
+                        <p class="card-text"></p>
                         <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
                     </div>
                 </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        Top 20 Violations
-                    </div>
-                    <div class="card-body">
-                        <img class="card-img-bottom" src="visualization_4.svg" alt="Card image cap" width="900"
-                            height="680">
-                        <p class="card-text"> The most frequently issued tickets in Los Angeles are given for no
-                            parking/street cleaning (30 percent), expired meters (15 percent), and red zone (8
-                            percent). </p>
-                        <h5 class="card-title">Code</h5>
-                        <img class="card-img-bottom" src="Code 3.PNG" alt="Card image cap">
-                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                    </div>
-                </div>
-
-
-                <!-- <div class="card">
-                        <div class="card-header">
-                        Parking Ticket Hot Zone
-                        </div>
-                        <div class="card-body">
-                            <img class="card-img-bottom" src="map.PNG" alt="Card image cap">
-                            <p class="card-text"> </p>
-                            <h5 class="card-title">Code</h5>
-                            <img class="card-img-bottom" src="Code 4.PNG" alt="Card image cap">
-                            <a href="#" class="btn btn-primary">Go somewhere</a>
-                        </div>
-                    </div> -->
-
-                    <div class="row">
-                            <div class="col-sm-7">
-                                <div class="card">
-                                    <div class="card-header">
-                                        Parking Ticket Hot Zone
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title"></h5>
-                                        <img class="card-img-top" src="map.PNG" alt="Card image cap">
-                                        <p class="card-text"></p>
-                                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-5">
-                                <div class="card">
-                                    <div class="card-header">
-                                        Code
-                                    </div>
-                                    <div class="card-body">
-                                        <h5 class="card-title"></h5>
-                                        <img class="card-img-top" src="Code 4.PNG" alt="Card image cap">
-                                        <p class="card-text"></p>
-                                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
             </div>
         </div>
+        <!-- first ana -->
+
+        <div class="card">
+            <div class="card-header">
+                Analysis
+            </div>
+            <div class="card-body">
+                <h7 class="card-title">In 2018, the month of March had the most tickets issued with over
+                    $13 million tickets and September was the lowest with $9.9 million issued. There was a
+                    noticeable trend downward as the year went on, with the lower amount volumes coming at the
+                    end of the year. The city of LA runs on a fiscal year that begins in April so there was a
+                    correlation there to the highest number of citations the month before. </h7>
+                <p class="card-text"></p>
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+            </div>
+        </div>
+
+        <!-- second/third chart -->
+        <div class="card">
+            <div class="card-header">
+                Total Number of Tickets by Hour of Day
+            </div>
+            <div class="card-body">
+                <h5 class="card-title"></h5>
+                <img class="card-img-top" src="visualization_2.svg" alt="Card image cap">
+                <p class="card-text"></p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                Top 5 Violations by Each Hour
+            </div>
+            <div class="card-body">
+                <h5 class="card-title"></h5>
+                <img class="card-img-top" src="visualization_3.svg" alt="Card image cap">
+                <p class="card-text"></p>
+            </div>
+        </div>
+        <!-- second/third ana -->
+
+        <div class="card">
+            <div class="card-header">
+                Analysis
+            </div>
+            <div class="card-body">
+                <h7 class="card-title">The first graph shows a drastic jump in issued tickets starting at 8am and
+                    lasting throughout noon, wherafter the number of citations start to decrease. Most of the
+                    citations were issued at 8am, 10am, and noon. The top 5 violations for each hour were also
+                    shown in the second graph, which allows us to find some correlations between violation types
+                    and hours, for instance, "NO PARK/STREET CLEAN" violation happened most frequently around
+                    8am to 1pm.</h7>
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+            </div>
+        </div>
+
+        <!-- forth chart -->
+        <div class="card">
+            <div class="card-header">
+                Top 20 Violations
+            </div>
+            <div class="card-body">
+                <img class="card-img-bottom" src="visualization_4.svg" alt="Card image cap" width="680" height="480">
+            </div>
+        </div>
+
+        <!-- forth ana -->
+        <div class="card">
+            <div class="card-header">
+                Analysis
+            </div>
+            <div class="card-body">
+                <h7 class="card-title">The most frequently issued tickets in Los Angeles are given for no
+                    parking/street cleaning (30 percent), expired meters (15 percent), and red zone (8
+                    percent).</h7>
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+            </div>
+        </div>
+
+        <!-- map -->
+        <div class="card">
+            <div class="card-header">
+                Parking Ticket Hot Zone
+            </div>
+            <div class="card-body">
+                <h5 class="card-title"></h5>
+                <img class="card-img-top" src="map.PNG" alt="Card image cap">
+                <p class="card-text"></p>
+            </div>
+        </div>
+
+        <!-- angency -->
+        <div class="card">
+            <div class="card-header">
+                Top Agencies for Parking Fine Collection
+            </div>
+            <div class="card-body">
+                <h5 class="card-title"></h5>
+                <img class="card-img-top" src="visualization_5.svg" alt="Card image cap">
+                <p class="card-text"></p>
+            </div>
+        </div>
+
+        <!-- fifth ana -->
+        <div class="card">
+            <div class="card-header">
+                Analysis
+            </div>
+            <div class="card-body">
+                <h7 class="card-title">According to LADOT’s website, some of parking ticket revenue goes to state and
+                    county fees and the remainder goes to the city's general fund to pay for essential municipal
+                    services, including police and fire. There are additional distributions for fix-it citations and
+                    disabled parking violations. Based on the data, over 95% of 2018 parking fines were collected by
+                    LADOT.
+                </h7>
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+            </div>
+        </div>
+
+     
     </div>
 
+    <div id="footer">
+            <div class="container">
+                <p class="footer-block"></p>
+            </div>
+        </div>
 
 
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
